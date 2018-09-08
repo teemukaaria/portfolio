@@ -4,7 +4,7 @@
   "description": "Portfolio of Teemu Kääriä",
   "main": "index.js",
   "scripts": {
-    "devserver": "live-server --watch=\"index.html,css/style.css,js/main.comp.js\"",
+    "devserver": "live-server --watch=\"index.html,css/style.css,js/bundle.comp.js\"",
     "start": "run-p watch:sass watch:js devserver",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.prefix.css",
