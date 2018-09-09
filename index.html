@@ -11,22 +11,31 @@
 </head>
 <body>
 
+  <!-- define paths for curved text  -->
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <path id="largerUpperCircle" d="M7.4 57.1 A41 41 0 0 1 57.1 7.4" />
+      <path id="largerLowerCircle" d="M41.5 98.3 A49 49 0 0 0 98.3 41.5" />
+      <!-- paths with 5deg tilt
+      <path id="smallerUpperCircle" d="M7.8 53.6 A41 41 0 0 1 53.6 7.8" />
+      <path id="smallerLowerCircle" d="M45.7 98.8 A49 49 0 0 0 98.8 45.7" />-->
+      <path id="smallerUpperCircle" d="M8 50 A41 41 0 0 1 50 8" />
+      <path id="smallerLowerCircle" d="M50 99 A49 49 0 0 0 99 50" />
+    </defs>
+  </svg>
+
   <header class="section" id="section-teemu">
     <a href="#teemu" class="circle-section hidden section__primary-button">
       <div class="circle-section__animation-layer">
         <img src="img/face.jpg" alt="Teemu Kääriä" class="circle-section__img">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="circle-section__text" viewBox="-3 -3 104 104">
-          <defs>
-            <path id="upperCircle" d="M7.4 57.1 A41 41 0 0 1 57.1 7.4" />
-            <path id="lowerCircle" d="M41.5 98.3 A49 49 0 0 0 98.3 41.5" />
-          </defs>
+        <svg version="1.1" class="circle-section__text" viewBox="-3 -3 104 104">
           <text class="circle-section__text--upper">
-            <textPath href="#upperCircle">
+            <textPath href="#largerUpperCircle">
               Teemu Kääriä
             </textPath>
           </text>
           <text class="circle-section__text--lower">
-              <textPath href="#lowerCircle">
+              <textPath href="#largerLowerCircle">
                 Web Developer
               </textPath>
             </text>
@@ -44,12 +53,8 @@
             <use xlink:href="img/sprite.svg#icon-card_membership" />
           </svg>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="circle-section__text" viewBox="-2.4 -2.4 104 104">
-            <defs>
-              <path id="upperCircle" d="M7.8 53.6 A41 41 0 0 1 53.6 7.8" />
-              <path id="lowerCircle" d="M45.7 98.8 A49 49 0 0 0 98.8 45.7" />
-            </defs>
             <text class="circle-section__text--lower">
-                <textPath href="#lowerCircle">
+                <textPath href="#smallerLowerCircle">
                   Resume
                 </textPath>
               </text>
@@ -65,12 +70,8 @@
             <use xlink:href="img/sprite.svg#icon-laptop_mac" />
           </svg>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="circle-section__text" viewBox="-2.4 -2.4 104 104">
-            <defs>
-              <path id="upperCircle" d="M7.8 53.6 A41 41 0 0 1 53.6 7.8" />
-              <path id="lowerCircle" d="M45.7 98.8 A49 49 0 0 0 98.8 45.7" />
-            </defs>
             <text class="circle-section__text--lower">
-                <textPath href="#lowerCircle">
+                <textPath href="#smallerLowerCircle">
                   Techs
                 </textPath>
               </text>
@@ -86,12 +87,8 @@
             <use xlink:href="img/sprite.svg#icon-folder" />
           </svg>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="circle-section__text" viewBox="-2.4 -2.4 104 104">
-            <defs>
-              <path id="upperCircle" d="M7.8 53.6 A41 41 0 0 1 53.6 7.8" />
-              <path id="lowerCircle" d="M45.7 98.8 A49 49 0 0 0 98.8 45.7" />
-            </defs>
             <text class="circle-section__text--lower">
-                <textPath href="#lowerCircle">
+                <textPath href="#smallerLowerCircle">
                   Projects
                 </textPath>
               </text>
