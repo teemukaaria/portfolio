@@ -21,7 +21,8 @@
     "copy:img": "copyfiles img/**/* -s build",
     "build:img": "npm-run-all compress:img copy:img",
     "build:html": "copyfiles index.html build",
-    "build": "npm-run-all build:css build:js build:img build:html",
+    "build:files": "copyfiles files/**/^* build",
+    "build": "npm-run-all build:css build:js build:img build:html build:files",
     "deploy": "node deploy.js"
   },
   "repository": {

@@ -1,7 +1,15 @@
 .circle-section {
-  @include positionAbsoluteCenter;
+  position: relative;
+  transform-origin: center;
+  display: block;
   width: 50vh;
   height: 50vh;
+  transition: all 1s;
+
+  &--small {
+    width: 20vh;
+    height: 20vh;
+  }
 
   &__animation-layer {
     display: block;
@@ -24,10 +32,18 @@
     box-shadow: 0 0 2rem rgba($color-black, .7);
   }
 
+  &__icon {
+    @include positionAbsoluteCenter;
+    fill: $color-white;
+    width: 50%;
+    height: 50%;
+  }
+
   &__text {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
     font-weight: 500;
+    letter-spacing: 1px;
     text-transform: uppercase;
     animation: spin 1s;
     fill: $color-white;
@@ -35,17 +51,17 @@
   }
 
   // Pulsing behaviour
-  &--pulsing &__animation-layer {
+  &.pulsing &__animation-layer {
     animation: pulse .64s;
   }
 
   // Blurred behaviour
-  &--blurred &__animation-layer {
+  &.blurred &__animation-layer {
     animation: none;
     transform: scale(.6);
-    filter: grayscale(1);
+    filter: grayscale(1) blur(3px);
   }
-  &--blurred &__text {
+  &.blurred &__text {
     transform: rotate(-720deg);
   }
 
@@ -54,7 +70,7 @@
     transform: scale(1.05);
     animation: none;
   }
-  &--blurred &__animation-layer:hover {
+  &.blurred &__animation-layer:hover {
     transform: scale(.63);
   }
 
@@ -62,18 +78,21 @@
   &__animation-layer:active {
     transform: scale(1);
   }
-  &--blurred &__animation-layer:active {
+  &.blurred &__animation-layer:active {
     transform: scale(.6);
   }
 
   // Animation behaviour for smoother animations
-  &--animating &__animation-layer {
+  &.animating &__animation-layer {
     transition: all 1s;
   }
 
   // Hidden behaviour
-  &--hidden &__animation-layer {
+  &.hidden &__animation-layer {
     transform: scale(.6);
     opacity: 0;
+  }
+  &.hidden &__text {
+    transform: rotate(-720deg);
   }
 }

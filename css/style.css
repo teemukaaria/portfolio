@@ -4,25 +4,17 @@
   100% {
     transform: rotate(720deg); } }
 
-@keyframes scaleToView {
-  0% {
-    transform: scale(0.4);
-    opacity: 0; }
-  100% {
-    transform: scale(1);
-    opacity: 1; } }
-
 @keyframes pulse {
   0% {
     transform: scale(1); }
   20% {
-    transform: scale(1.08); }
+    transform: scale(1.06); }
   40% {
     transform: scale(1); }
   60% {
     transform: scale(1); }
   80% {
-    transform: scale(1.05); }
+    transform: scale(1.04); }
   100% {
     transform: scale(1); } }
 
@@ -41,12 +33,15 @@ body {
   background: #f3f3f3; }
 
 .circle-section {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  transform-origin: center;
+  display: block;
   width: 50vh;
-  height: 50vh; }
+  height: 50vh;
+  transition: all 1s; }
+  .circle-section--small {
+    width: 20vh;
+    height: 20vh; }
   .circle-section__animation-layer {
     display: block;
     background-image: linear-gradient(to bottom right, #fa8231, #F02F46);
@@ -67,33 +62,78 @@ body {
     height: 70%;
     border-radius: 100%;
     box-shadow: 0 0 2rem rgba(17, 17, 17, 0.7); }
+  .circle-section__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: #f3f3f3;
+    width: 50%;
+    height: 50%; }
   .circle-section__text {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
     font-weight: 500;
+    letter-spacing: 1px;
     text-transform: uppercase;
     animation: spin 1s;
     fill: #f3f3f3;
     transition: transform 1s; }
-  .circle-section--pulsing .circle-section__animation-layer {
+  .circle-section.pulsing .circle-section__animation-layer {
     animation: pulse .64s; }
-  .circle-section--blurred .circle-section__animation-layer {
+  .circle-section.blurred .circle-section__animation-layer {
     animation: none;
     transform: scale(0.6);
-    filter: grayscale(1); }
-  .circle-section--blurred .circle-section__text {
+    filter: grayscale(1) blur(3px); }
+  .circle-section.blurred .circle-section__text {
     transform: rotate(-720deg); }
   .circle-section__animation-layer:hover {
     transform: scale(1.05);
     animation: none; }
-  .circle-section--blurred .circle-section__animation-layer:hover {
+  .circle-section.blurred .circle-section__animation-layer:hover {
     transform: scale(0.63); }
   .circle-section__animation-layer:active {
     transform: scale(1); }
-  .circle-section--blurred .circle-section__animation-layer:active {
+  .circle-section.blurred .circle-section__animation-layer:active {
     transform: scale(0.6); }
-  .circle-section--animating .circle-section__animation-layer {
+  .circle-section.animating .circle-section__animation-layer {
     transition: all 1s; }
-  .circle-section--hidden .circle-section__animation-layer {
+  .circle-section.hidden .circle-section__animation-layer {
     transform: scale(0.6);
     opacity: 0; }
+  .circle-section.hidden .circle-section__text {
+    transform: rotate(-720deg); }
+
+.section {
+  position: absolute;
+  transform: translate(-50%, -50%); }
+  .section.hidden, .section.blurred {
+    z-index: -1000; }
+
+#section-teemu {
+  top: 50%;
+  left: 50%; }
+
+#section-projects {
+  top: calc(50% + 25vh * 0.6 + 4rem);
+  left: calc(50% + 25vh * 0.6 + 4rem); }
+  #section-projects .section__primary-button.hidden {
+    transform: translate(calc(-25vh * 0.6 - 4rem), calc(-25vh * 0.6 - 4rem)); }
+
+#section-resume {
+  top: calc(50% - 25vh * 0.6 - 4rem);
+  left: calc(50% - 25vh * 0.6 - 4rem); }
+  #section-resume .section__primary-button.hidden {
+    transform: translate(calc(25vh * 0.6 + 4rem), calc(25vh * 0.6 + 4rem)); }
+
+#section-techs {
+  top: calc(50% - 25vh * 0.6 - 4rem);
+  left: calc(50% + 25vh * 0.6 + 4rem); }
+  #section-techs .section__primary-button.hidden {
+    transform: translate(calc(-25vh * 0.6 - 4rem), calc(25vh * 0.6 + 4rem)); }
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }

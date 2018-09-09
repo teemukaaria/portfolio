@@ -4,9 +4,9 @@ function startPulse() {
   if (teemuPulseInterval !== undefined) return;
   teemuPulseInterval = setInterval(() => {
       const section = document.getElementsByClassName('circle-section')[0];
-      section.classList.add('circle-section--pulsing');
+      section.classList.add('pulsing');
       setTimeout(() => {
-        section.classList.remove('circle-section--pulsing');
+        section.classList.remove('pulsing');
       }, 650);
     }, 4000);
 }

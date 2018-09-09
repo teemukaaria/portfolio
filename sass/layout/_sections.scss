@@ -1,0 +1,47 @@
+.section {
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  &.hidden,
+  &.blurred {
+    z-index: -1000;
+  }
+}
+
+#section-teemu {
+  top: 50%;
+  left: 50%;
+}
+
+// SECTION POSITIONING
+$abspos: calc(50% + 25vh * 0.6 + 4rem);
+$absneg: calc(50% - 25vh * 0.6 - 4rem);
+$relpos: calc(25vh * 0.6 + 4rem);
+$relneg: calc(-25vh * 0.6 - 4rem);
+
+#section-projects {
+  top: $abspos;
+  left: $abspos;
+
+  .section__primary-button.hidden {
+    transform: translate($relneg, $relneg);
+  }
+}
+
+#section-resume {
+  top: $absneg;
+  left: $absneg;
+
+  .section__primary-button.hidden {
+    transform: translate($relpos, $relpos);
+  }
+}
+
+#section-techs {
+  top: $absneg;
+  left: $abspos;
+
+  .section__primary-button.hidden {
+    transform: translate($relneg, $relpos);
+  }
+}
