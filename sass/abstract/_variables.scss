@@ -4,5 +4,21 @@ $color-primary-1: #fa8231;
 $color-primary-2: #F02F46;
 
 $color-white: #f3f3f3;
+$color-gray-light: #ddd;
 $color-gray-dark: #333;
 $color-black: #111;
+
+// CIRCLE SIZES
+
+$header-radius: 25vh;
+$section-header-radius: 10vh;
+$info-blob-radius: 5vh;
+$header-scale-down: 0.6;
+
+// BOX SHADOW
+
+$bs-color: rgba($color-black, .7);
+
+// TRANSITIONS
+
+$mouse-transition-duration: .16s;

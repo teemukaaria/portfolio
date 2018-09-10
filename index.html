@@ -24,76 +24,135 @@
     </defs>
   </svg>
 
-  <header class="section" id="section-teemu">
-    <a href="#teemu" class="circle-section hidden section__primary-button">
-      <div class="circle-section__animation-layer">
-        <img src="img/face.jpg" alt="Teemu Kääriä" class="circle-section__img">
-        <svg version="1.1" class="circle-section__text" viewBox="-3 -3 104 104">
-          <text class="circle-section__text--upper">
-            <textPath href="#largerUpperCircle">
-              Teemu Kääriä
+  <header class="header" id="section-teemu" primaryHref="#teemu" secondaryHref="#" >
+    <a href="#teemu" class="btn-primary hidden section__primary-button">
+      <img src="img/face.jpg" alt="Teemu Kääriä" class="btn-primary__img">
+      <svg version="1.1" class="btn-primary__text" viewBox="-3 -3 104 104">
+        <text class="btn-primary__text--upper">
+          <textPath href="#largerUpperCircle">
+            Teemu Kääriä
+          </textPath>
+        </text>
+        <text class="btn-primary__text--lower">
+            <textPath href="#largerLowerCircle">
+              Web Developer
             </textPath>
           </text>
-          <text class="circle-section__text--lower">
-              <textPath href="#largerLowerCircle">
-                Web Developer
-              </textPath>
-            </text>
-        </svg>
-      </div>
+      </svg>
     </a>
   </header>
 
   <main>
     
-    <section class="section" id="section-resume">
-      <a href="files/CV_Teemu_Feb_2018_EN.pdf" target="_blank" class="circle-section circle-section--small hidden section__primary-button">
-        <div class="circle-section__animation-layer">
-          <svg class="circle-section__icon">
-            <use xlink:href="img/sprite.svg#icon-card_membership" />
-          </svg>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="circle-section__text" viewBox="-2.4 -2.4 104 104">
-            <text class="circle-section__text--lower">
-                <textPath href="#smallerLowerCircle">
-                  Resume
-                </textPath>
-              </text>
-          </svg>
-        </div>
+    <section class="section" id="section-resume" primaryHref="files/CV_Teemu_Feb_2018_EN.pdf" secondaryHref="files/CV_Teemu_Feb_2018_EN.pdf">
+      <a href="files/CV_Teemu_Feb_2018_EN.pdf" target="_blank" class="btn-primary btn-primary--small hidden section__primary-button">
+        <svg class="btn-primary__icon">
+          <use xlink:href="img/sprite.svg#icon-card_membership" />
+        </svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="btn-primary__text" viewBox="-2.4 -2.4 104 104">
+          <text class="btn-primary__text--lower">
+              <textPath href="#smallerLowerCircle">
+                Resume
+              </textPath>
+            </text>
+        </svg>
       </a>
     </section>
     
-    <section class="section" id="section-techs">
-      <a href="#techs" class="circle-section circle-section--small hidden section__primary-button">
-        <div class="circle-section__animation-layer">
-          <svg class="circle-section__icon">
-            <use xlink:href="img/sprite.svg#icon-laptop_mac" />
-          </svg>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="circle-section__text" viewBox="-2.4 -2.4 104 104">
-            <text class="circle-section__text--lower">
-                <textPath href="#smallerLowerCircle">
-                  Techs
-                </textPath>
-              </text>
-          </svg>
-        </div>
+    <section class="section" id="section-techs" primaryHref="#techs" secondaryHref="#teemu" >
+      <a href="#techs" class="btn-primary btn-primary--small hidden section__primary-button">
+        <svg class="btn-primary__icon">
+          <use xlink:href="img/sprite.svg#icon-laptop_mac" />
+        </svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="btn-primary__text" viewBox="-2.4 -2.4 104 104">
+          <text class="btn-primary__text--lower">
+              <textPath href="#smallerLowerCircle">
+                Techs
+              </textPath>
+            </text>
+        </svg>
       </a>
+
+      <div class="info-blob hidden section__secondary-item" id="info-blob-html5">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-html5" />
+        </svg>
+        <p class="info-blob__description">HTML5</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-css3">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-css3" />
+        </svg>
+        <p class="info-blob__description">CSS3</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-javascript">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-javascript" />
+        </svg>
+        <p class="info-blob__description">JavaScript</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-sass">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-sass" />
+        </svg>
+        <p class="info-blob__description">SASS</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-wordpress">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-wordpress" />
+        </svg>
+        <p class="info-blob__description">WordPress</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-react">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-react" />
+        </svg>
+        <p class="info-blob__description">ReactJS</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-php">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-php" />
+        </svg>
+        <p class="info-blob__description">PHP</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-sql">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-mysql" />
+        </svg>
+        <p class="info-blob__description">SQL</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-git">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-git" />
+        </svg>
+        <p class="info-blob__description">Git</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-npm">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-npm" />
+        </svg>
+        <p class="info-blob__description">NPM</p>
+      </div>
+      <div class="info-blob hidden section__secondary-item" id="info-blob-linux">
+        <svg class="info-blob__icon">
+          <use xlink:href="img/sprite.svg#icon-linux" />
+        </svg>
+        <p class="info-blob__description">Linux</p>
+      </div>
     </section>
 
-    <section class="section" id="section-projects">
-      <a href="#projects" class="circle-section circle-section--small hidden section__primary-button">
-        <div class="circle-section__animation-layer">
-          <svg class="circle-section__icon">
-            <use xlink:href="img/sprite.svg#icon-folder" />
-          </svg>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="circle-section__text" viewBox="-2.4 -2.4 104 104">
-            <text class="circle-section__text--lower">
-                <textPath href="#smallerLowerCircle">
-                  Projects
-                </textPath>
-              </text>
-          </svg>
-        </div>
+    <section class="section" id="section-projects" primaryHref="#projects" secondaryHref="#teemu" >
+      <a href="#projects" class="btn-primary btn-primary--small hidden section__primary-button">
+        <svg class="btn-primary__icon">
+          <use xlink:href="img/sprite.svg#icon-folder" />
+        </svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="btn-primary__text" viewBox="-2.4 -2.4 104 104">
+          <text class="btn-primary__text--lower">
+              <textPath href="#smallerLowerCircle">
+                Projects
+              </textPath>
+            </text>
+        </svg>
       </a>
     </section>
   </main>

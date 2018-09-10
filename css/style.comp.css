@@ -30,31 +30,23 @@ html {
 
 body {
   box-sizing: border-box;
-  background: #f3f3f3; }
+  background: #f3f3f3;
+  font-family: 'Ubuntu', sans-serif; }
 
-.circle-section {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.btn-primary {
+  transform-origin: center;
+  display: block;
   width: 50vh;
   height: 50vh;
-  transition: all 1s; }
-  .circle-section--small {
+  background-image: linear-gradient(to bottom right, #fa8231, #F02F46);
+  border-radius: 100%;
+  padding: 1rem;
+  transition: all 0.16s;
+  box-shadow: 0 0 3rem rgba(17, 17, 17, 0.7); }
+  .btn-primary--small {
     width: 20vh;
     height: 20vh; }
-  .circle-section__animation-layer {
-    display: block;
-    background-image: linear-gradient(to bottom right, #fa8231, #F02F46);
-    border-radius: 100%;
-    padding: 1rem;
-    transform-origin: center;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    transition: all .16s;
-    box-shadow: 0 0 3rem rgba(17, 17, 17, 0.7); }
-  .circle-section__img {
+  .btn-primary__img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -63,7 +55,7 @@ body {
     height: 70%;
     border-radius: 100%;
     box-shadow: 0 0 2rem rgba(17, 17, 17, 0.7); }
-  .circle-section__icon {
+  .btn-primary__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -71,40 +63,173 @@ body {
     fill: #f3f3f3;
     width: 50%;
     height: 50%; }
-  .circle-section__text {
-    font-family: 'Ubuntu', sans-serif;
+  .btn-primary__text {
     font-size: 1rem;
     font-weight: 500;
+    letter-spacing: 1px;
     text-transform: uppercase;
     animation: spin 1s;
     fill: #f3f3f3;
     transition: transform 1s; }
-  .circle-section--pulsing .circle-section__animation-layer {
+  .btn-primary.pulsing {
     animation: pulse .64s; }
-  .circle-section--blurred .circle-section__animation-layer {
+  .btn-primary.blurred {
     animation: none;
     transform: scale(0.6);
-    filter: grayscale(1); }
-  .circle-section--blurred .circle-section__text {
+    box-shadow: 0 0 0 rgba(17, 17, 17, 0.7); }
+  .btn-primary.blurred .btn-primary__text {
     transform: rotate(-720deg); }
-  .circle-section__animation-layer:hover {
+  .btn-primary--small.blurred {
+    transform: scale(0.8); }
+  .btn-primary:hover {
     transform: scale(1.05);
     animation: none; }
-  .circle-section--blurred .circle-section__animation-layer:hover {
-    transform: scale(0.63); }
-  .circle-section__animation-layer:active {
+  .btn-primary.blurred:hover {
+    transform: scale(0.63);
+    box-shadow: 0 0 1rem rgba(17, 17, 17, 0.7); }
+  .btn-primary--small.blurred:hover {
+    transform: scale(0.83); }
+  .btn-primary:active {
     transform: scale(1); }
-  .circle-section--blurred .circle-section__animation-layer:active {
+  .btn-primary.blurred:active {
     transform: scale(0.6); }
-  .circle-section--animating .circle-section__animation-layer {
+  .btn-primary--small.blurred:active {
+    transform: scale(0.8); }
+  .btn-primary.animating {
     transition: all 1s; }
-  .circle-section--hidden .circle-section__animation-layer {
+  .btn-primary.hidden {
     transform: scale(0.6);
     opacity: 0; }
-  .circle-section--hidden .circle-section__text {
+  .btn-primary.hidden .btn-primary__text {
     transform: rotate(-720deg); }
-  .circle-section--hidden {
+
+.info-blob {
+  position: absolute;
+  height: 10vh;
+  width: 10vh;
+  background: #ddd;
+  border-radius: 100%;
+  box-shadow: 0 0 1rem rgba(17, 17, 17, 0.7);
+  transition: all 0.16s;
+  overflow: hidden; }
+  .info-blob__icon {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    transition: transform 0.16s; }
+  .info-blob__description {
+    color: #fa8231;
+    position: relative;
+    height: 100%;
+    top: calc(50% - .7rem);
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    transition: transform 0.16s;
+    transform: translateY(100%); }
+  .info-blob:hover .info-blob__icon {
+    transform: translateY(-200%); }
+  .info-blob:hover .info-blob__description {
+    transform: translateY(0); }
+  .info-blob.hidden {
+    transform: scale(0.4);
+    opacity: 0; }
+  .info-blob.animating {
+    transition: all 1s; }
+
+#info-blob-html5 {
+  bottom: 13rem;
+  left: 9rem; }
+
+#info-blob-css3 {
+  bottom: 23rem;
+  left: 6rem; }
+
+#info-blob-javascript {
+  bottom: 24rem;
+  left: 17rem; }
+
+#info-blob-sass {
+  bottom: 30rem;
+  left: 27rem; }
+
+#info-blob-wordpress {
+  bottom: 29rem;
+  left: 40rem; }
+
+#info-blob-react {
+  bottom: 20rem;
+  left: 32rem; }
+
+#info-blob-php {
+  bottom: 16rem;
+  left: 43rem; }
+
+#info-blob-sql {
+  bottom: 4rem;
+  left: 46rem; }
+
+#info-blob-git {
+  bottom: -2rem;
+  left: 35rem; }
+
+#info-blob-npm {
+  bottom: 9rem;
+  left: 34rem; }
+
+#info-blob-linux {
+  bottom: 0rem;
+  left: 24rem; }
+
+.section {
+  position: absolute;
+  width: 40vw;
+  height: 50vh; }
+  .section.hidden, .section.blurred {
     z-index: -1000; }
 
-#section-projects:not(.circle-section--hidden) {
-  transform: translate(calc(-50% + 25vh * 0.6 + 4rem), calc(-50% + 25vh * 0.6 + 4rem)); }
+#section-teemu .section__primary-button {
+  position: relative;
+  top: -12.5vh;
+  left: -12.5vh; }
+
+#section-projects {
+  top: 50%;
+  left: 50%; }
+  #section-projects .section__primary-button {
+    position: absolute;
+    top: calc(25vh * 0.6 - 3rem);
+    left: calc(25vh * 0.6 - 3rem); }
+    #section-projects .section__primary-button.hidden {
+      transform: translate(calc(-25vh * 0.6 + 3rem), calc(-25vh * 0.6 + 3rem)); }
+
+#section-resume {
+  bottom: 50%;
+  right: 50%; }
+  #section-resume .section__primary-button {
+    position: absolute;
+    bottom: calc(25vh * 0.6 - 3rem);
+    right: calc(25vh * 0.6 - 3rem); }
+    #section-resume .section__primary-button.hidden {
+      transform: translate(calc(25vh * 0.6 - 3rem), calc(25vh * 0.6 - 3rem)); }
+
+#section-techs {
+  bottom: 50%;
+  left: calc(50% - calc(25vh * 0.6 - 3rem)); }
+  #section-techs .section__primary-button {
+    position: absolute;
+    bottom: calc(25vh * 0.6 - 3rem);
+    left: calc(2 * calc(25vh * 0.6 - 3rem)); }
+    #section-techs .section__primary-button.hidden {
+      transform: translate(calc(-25vh * 0.6 + 3rem), calc(25vh * 0.6 - 3rem)); }
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 25vh;
+  width: 25vh;
+  z-index: 1000; }

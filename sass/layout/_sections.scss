@@ -1,6 +1,7 @@
 .section {
   position: absolute;
-  transform: translate(-50%, -50%);
+  width: 40vw;
+  height: 50vh;
 
   &.hidden,
   &.blurred {
@@ -8,40 +9,57 @@
   }
 }
 
-#section-teemu {
-  top: 50%;
-  left: 50%;
+#section-teemu .section__primary-button {
+  position: relative;
+  top: -$header-radius / 2;
+  left: -$header-radius / 2;
 }
 
 // SECTION POSITIONING
-$abspos: calc(50% + 25vh * 0.6 + 4rem);
-$absneg: calc(50% - 25vh * 0.6 - 4rem);
-$relpos: calc(25vh * 0.6 + 4rem);
-$relneg: calc(-25vh * 0.6 - 4rem);
+$primary-button-offset: calc(#{$header-radius} * #{$header-scale-down} - 3rem);
+$primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 3rem);
 
 #section-projects {
-  top: $abspos;
-  left: $abspos;
+  top: 50%;
+  left: 50%;
 
-  .section__primary-button.hidden {
-    transform: translate($relneg, $relneg);
+  .section__primary-button {
+    position: absolute;
+    top: $primary-button-offset;
+    left: $primary-button-offset;
+
+    &.hidden {
+      transform: translate($primary-button-offset-neg, $primary-button-offset-neg);
+    }
   }
 }
 
 #section-resume {
-  top: $absneg;
-  left: $absneg;
+  bottom: 50%;
+  right: 50%;
 
-  .section__primary-button.hidden {
-    transform: translate($relpos, $relpos);
+  .section__primary-button {
+    position: absolute;
+    bottom: $primary-button-offset;
+    right: $primary-button-offset;
+
+    &.hidden {
+      transform: translate($primary-button-offset, $primary-button-offset);
+    }
   }
 }
 
 #section-techs {
-  top: $absneg;
-  left: $abspos;
+  bottom: 50%;
+  left: calc(50% - #{$primary-button-offset});
 
-  .section__primary-button.hidden {
-    transform: translate($relneg, $relpos);
+  .section__primary-button {
+    position: absolute;
+    bottom: $primary-button-offset;
+    left: calc(2 * #{$primary-button-offset});
+
+    &.hidden {
+      transform: translate($primary-button-offset-neg, $primary-button-offset);
+    }
   }
 }

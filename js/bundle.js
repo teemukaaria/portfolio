@@ -3,7 +3,7 @@ let teemuPulseInterval = undefined;
 function startPulse() {
     if (teemuPulseInterval !== undefined) return;
     teemuPulseInterval = setInterval(() => {
-        const section = document.getElementsByClassName('circle-section')[0];
+        const section = document.getElementById('section-teemu').getElementsByClassName('section__primary-button')[0];
         section.classList.add('pulsing');
         setTimeout(() => {
             section.classList.remove('pulsing');
@@ -24,6 +24,11 @@ function applySmoothAnimation(element) {
     setTimeout(() => {
         element.classList.remove('animating');
     }, 1000);
+}
+
+function getSectionElement(section) {
+    if (typeof section === "string") return document.getElementById(section);
+    return section;
 }
 
 function open(element) {
@@ -56,59 +61,82 @@ function blurPrimaryButtons(section) {
     for (let i = 0; i < primaryButton.length; i++) blur(primaryButton[i]);
 }
 
-function openSection(section) {
-    let sectionElem;
-    if (typeof section === "string") sectionElem = document.getElementById(section);
-    else sectionElem = section;
+function openSecondaryItems(section) {
+    const items = section.getElementsByClassName('section__secondary-item');
+    for (let i = 0; i < items.length; i++) open(items[i]);
+}
+
+function hideSecondaryItems(section) {
+    const items = section.getElementsByClassName('section__secondary-item');
+    for (let i = 0; i < items.length; i++) hide(items[i]);
+}
+
+function peekSection(section) {
+    const sectionElem = getSectionElement(section);
     open(sectionElem);
     openPrimaryButtons(sectionElem);
+    hideSecondaryItems(sectionElem);
+    sectionElem.firstElementChild.href = sectionElem.getAttribute('primaryHref');
 }
 
 function hideSection(section) {
-    let sectionElem;
-    if (typeof section === "string") sectionElem = document.getElementById(section);
-    else sectionElem = section;
+    const sectionElem = getSectionElement(section);
     hide(sectionElem);
     hidePrimaryButtons(sectionElem);
+    hideSecondaryItems(sectionElem);
 }
 
-function closeTeemu() {
-    stopPulse();
-    const section = document.getElementById('section-teemu');
-    blur(section);
-    blurPrimaryButtons(section);
-    section.firstElementChild.href = "#";
+function openSection(section) {
+    const sectionElem = getSectionElement(section);
+    blurPrimaryButtons(sectionElem);
+    openSecondaryItems(sectionElem);
+    sectionElem.firstElementChild.href = sectionElem.getAttribute('secondaryHref');
 }
 
-function openTeemu() {
-    const section = document.getElementById('section-teemu');
-    open(section);
-    openPrimaryButtons(section);
-    section.firstElementChild.href = "#teemu";
-    startPulse();
-}
-
-function closeSecondary() {
+function hideSections() {
     hideSection('section-projects');
     hideSection('section-resume');
     hideSection('section-techs');
 }
 
-function openSecondary() {
-    openSection('section-projects');
-    openSection('section-resume');
-    openSection('section-techs');
+function peekSections() {
+    peekSection('section-projects');
+    peekSection('section-resume');
+    peekSection('section-techs');
+}
+
+function blurHeader() {
+    stopPulse();
+    const section = document.getElementById('section-teemu');
+    blur(section);
+    blurPrimaryButtons(section);
+    peekSections();
+    section.firstElementChild.href = "#";
+}
+
+function openHeader() {
+    const section = document.getElementById('section-teemu');
+    open(section);
+    openPrimaryButtons(section);
+    hideSections();
+    section.firstElementChild.href = "#teemu";
+    startPulse();
 }
 
 function checkState() {
     switch (window.location.hash) {
         case '#teemu':
-            closeTeemu();
-            openSecondary();
+            blurHeader();
+            peekSections();
+            break;
+        case '#techs':
+            blurHeader();
+            peekSections();
+            openSection('section-techs');
             break;
         default:
-            openTeemu();
-            closeSecondary();
+            openHeader();
+            hideSections();
             break;
     }
 }
@@ -116,6 +144,6 @@ window.addEventListener("hashchange", () => {
     checkState();
 });
 window.addEventListener("load", () => {
-    openTeemu();
+    openHeader();
     checkState();
 })

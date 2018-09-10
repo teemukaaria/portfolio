@@ -1,0 +1,98 @@
+.btn-primary {
+  transform-origin: center;
+  display: block;
+  width: $header-radius * 2;
+  height: $header-radius * 2;
+  background-image: linear-gradient(to bottom right, $color-primary-1, $color-primary-2);
+  border-radius: 100%;
+  padding: 1rem;
+  transition: all $mouse-transition-duration;
+  box-shadow: 0 0 3rem $bs-color;
+
+  &--small {
+    width: $section-header-radius * 2;
+    height: $section-header-radius * 2;
+  }
+
+  &__img {
+    @include positionAbsoluteCenter;
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+    box-shadow: 0 0 2rem $bs-color;
+  }
+
+  &__icon {
+    @include positionAbsoluteCenter;
+    fill: $color-white;
+    width: 50%;
+    height: 50%;
+  }
+
+  &__text {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: spin 1s;
+    fill: $color-white;
+    transition: transform 1s;
+  }
+
+  // Pulsing behaviour
+  &.pulsing {
+    animation: pulse .64s;
+  }
+
+  // Blurred behaviour
+  &.blurred {
+    animation: none;
+    transform: scale($header-scale-down);
+    //filter: grayscale(0) blur(0px);
+    box-shadow: 0 0 0 $bs-color;
+  }
+  &.blurred &__text {
+    transform: rotate(-720deg);
+  }
+  &--small.blurred {
+    transform: scale(.8);
+  }
+
+  // Hover behaviour
+  &:hover {
+    transform: scale(1.05);
+    animation: none;
+  }
+  &.blurred:hover {
+    transform: scale($header-scale-down + .03);
+    box-shadow: 0 0 1rem $bs-color;
+  }
+  &--small.blurred:hover {
+    transform: scale(.83);
+  }
+
+  // Active behaviour
+  &:active {
+    transform: scale(1);
+  }
+  &.blurred:active {
+    transform: scale($header-scale-down);
+  }
+  &--small.blurred:active {
+    transform: scale(.8);
+  }
+
+  // Animation behaviour for smoother animations
+  &.animating {
+    transition: all 1s;
+  }
+
+  // Hidden behaviour
+  &.hidden {
+    transform: scale($header-scale-down);
+    opacity: 0;
+  }
+  &.hidden &__text {
+    transform: rotate(-720deg);
+  }
+}

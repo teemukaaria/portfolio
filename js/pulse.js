@@ -3,7 +3,7 @@ let teemuPulseInterval = undefined;
 function startPulse() {
   if (teemuPulseInterval !== undefined) return;
   teemuPulseInterval = setInterval(() => {
-      const section = document.getElementsByClassName('circle-section')[0];
+      const section = document.getElementById('section-teemu').getElementsByClassName('section__primary-button')[0];
       section.classList.add('pulsing');
       setTimeout(() => {
         section.classList.remove('pulsing');
