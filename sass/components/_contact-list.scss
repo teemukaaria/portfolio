@@ -1,0 +1,33 @@
+.contact-list {
+  list-style-type: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    margin-right: 2rem;
+    fill: $color-black;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    color: $color-black;
+  }
+
+  &.hidden {
+    opacity: 0;
+    transform: translateX(-4rem);
+  }
+
+  &.animating {
+    transition: all $animating-transition-duration;
+  }
+}

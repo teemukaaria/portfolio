@@ -14,6 +14,11 @@ $header-radius: 25vh;
 $section-header-radius: 10vh;
 $info-blob-radius: 5vh;
 $header-scale-down: 0.6;
+$section-header-scale-down: 0.8;
+
+//PLACEMENT
+$primary-button-offset: calc(#{$header-radius} * #{$header-scale-down} - 3rem);
+$primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 3rem);
 
 // BOX SHADOW
 
@@ -22,3 +27,4 @@ $bs-color: rgba($color-black, .7);
 // TRANSITIONS
 
 $mouse-transition-duration: .16s;
+$animating-transition-duration: 1s;

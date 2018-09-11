@@ -16,20 +16,18 @@
 }
 
 // SECTION POSITIONING
-$primary-button-offset: calc(#{$header-radius} * #{$header-scale-down} - 3rem);
-$primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 3rem);
 
 #section-projects {
   top: 50%;
-  left: 50%;
+  right: 50%;
 
   .section__primary-button {
     position: absolute;
     top: $primary-button-offset;
-    left: $primary-button-offset;
+    right: $primary-button-offset;
 
     &.hidden {
-      transform: translate($primary-button-offset-neg, $primary-button-offset-neg);
+      transform: translate($primary-button-offset, $primary-button-offset-neg);
     }
   }
 }
@@ -42,6 +40,7 @@ $primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 3r
     position: absolute;
     bottom: $primary-button-offset;
     right: $primary-button-offset;
+    background: $color-primary-1;
 
     &.hidden {
       transform: translate($primary-button-offset, $primary-button-offset);
@@ -60,6 +59,22 @@ $primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 3r
 
     &.hidden {
       transform: translate($primary-button-offset-neg, $primary-button-offset);
+    }
+  }
+}
+
+#section-contacts {
+  top: 50%;
+  left: 50%;
+
+  .section__primary-button {
+    position: absolute;
+    top: $primary-button-offset;
+    left: $primary-button-offset;
+    background: $color-primary-2;
+
+    &.hidden {
+      transform: translate($primary-button-offset-neg, $primary-button-offset-neg);
     }
   }
 }

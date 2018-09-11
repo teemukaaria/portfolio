@@ -7,7 +7,7 @@
   border-radius: 100%;
   padding: 1rem;
   transition: all $mouse-transition-duration;
-  box-shadow: 0 0 3rem $bs-color;
+  box-shadow: 0rem 0rem 3rem $bs-color;
 
   &--small {
     width: $section-header-radius * 2;
@@ -34,9 +34,9 @@
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
-    animation: spin 1s;
+    animation: spin $animating-transition-duration;
     fill: $color-white;
-    transition: transform 1s;
+    transition: transform $animating-transition-duration;
   }
 
   // Pulsing behaviour
@@ -55,7 +55,7 @@
     transform: rotate(-720deg);
   }
   &--small.blurred {
-    transform: scale(.8);
+    transform: scale($section-header-scale-down);
   }
 
   // Hover behaviour
@@ -68,7 +68,7 @@
     box-shadow: 0 0 1rem $bs-color;
   }
   &--small.blurred:hover {
-    transform: scale(.83);
+    transform: scale($section-header-scale-down + .03);
   }
 
   // Active behaviour
@@ -79,12 +79,12 @@
     transform: scale($header-scale-down);
   }
   &--small.blurred:active {
-    transform: scale(.8);
+    transform: scale($section-header-scale-down);
   }
 
   // Animation behaviour for smoother animations
   &.animating {
-    transition: all 1s;
+    transition: all $animating-transition-duration;
   }
 
   // Hidden behaviour

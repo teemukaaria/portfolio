@@ -1,0 +1,31 @@
+#contact-list {
+  position: absolute;
+  top: calc(#{$primary-button-offset} + #{$section-header-radius} * (1 - #{$section-header-scale-down}));
+  left: calc(#{$primary-button-offset} + #{$section-header-radius} * 2 + 3rem);
+  height: $section-header-radius * 2 * $section-header-scale-down;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  & > li {
+    flex-grow: 1;
+  }
+
+  li:nth-child(2n - 1) {
+    transform: translateX(-1rem);
+  }
+}
+
+#contact-blob {
+  &-github {
+    top: 24rem;
+    left: 7rem;
+    background: #333;
+  }
+
+  &-linkedin {
+    top: 24rem;
+    left: 18rem;
+    background: #0077b5;
+  }
+}

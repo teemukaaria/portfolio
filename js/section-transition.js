@@ -71,11 +71,13 @@ function hideSections() {
   hideSection('section-projects');
   hideSection('section-resume');
   hideSection('section-techs');
+  hideSection('section-contacts');
 }
 function peekSections() {
   peekSection('section-projects');
   peekSection('section-resume');
   peekSection('section-techs');
+  peekSection('section-contacts');
 }
 
 function blurHeader() {
@@ -105,6 +107,11 @@ function checkState() {
       blurHeader();
       peekSections();
       openSection('section-techs');
+      break;
+    case '#contacts':
+      blurHeader();
+      peekSections();
+      openSection('section-contacts');
       break;
     default:
       openHeader();
