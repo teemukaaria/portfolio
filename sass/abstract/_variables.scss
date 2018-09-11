@@ -10,15 +10,15 @@ $color-black: #111;
 
 // CIRCLE SIZES
 
-$header-radius: 25vh;
-$section-header-radius: 10vh;
-$info-blob-radius: 5vh;
+$header-radius: 20rem;
+$section-header-radius: 8rem;
+$info-blob-radius: 4rem;
 $header-scale-down: 0.6;
 $section-header-scale-down: 0.8;
 
 //PLACEMENT
-$primary-button-offset: calc(#{$header-radius} * #{$header-scale-down} - 3rem);
-$primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 3rem);
+$primary-button-offset: calc(#{$header-radius} * #{$header-scale-down} - 4rem);
+$primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 4rem);
 
 // BOX SHADOW
 

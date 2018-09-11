@@ -153,6 +153,11 @@ function checkState() {
             peekSections();
             openSection('section-contacts');
             break;
+        case '#projects':
+            blurHeader();
+            peekSections();
+            openSection('section-projects');
+            break;
         default:
             openHeader();
             hideSections();

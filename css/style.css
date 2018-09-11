@@ -36,16 +36,16 @@ body {
 .btn-primary {
   transform-origin: center;
   display: block;
-  width: 50vh;
-  height: 50vh;
+  width: 40rem;
+  height: 40rem;
   background-image: linear-gradient(to bottom right, #fa8231, #F02F46);
   border-radius: 100%;
   padding: 1rem;
   transition: all 0.16s;
   box-shadow: 0rem 0rem 3rem rgba(17, 17, 17, 0.7); }
   .btn-primary--small {
-    width: 20vh;
-    height: 20vh; }
+    width: 16rem;
+    height: 16rem; }
   .btn-primary__img {
     position: absolute;
     top: 50%;
@@ -106,8 +106,8 @@ body {
 .info-blob {
   display: block;
   position: absolute;
-  height: 10vh;
-  width: 10vh;
+  height: 8rem;
+  width: 8rem;
   background: #333;
   border-radius: 100%;
   box-shadow: 0 0 0.3rem rgba(17, 17, 17, 0.7);
@@ -170,6 +170,48 @@ body {
   .contact-list.animating {
     transition: all 1s; }
 
+.project-link {
+  position: relative;
+  display: block;
+  width: 25rem;
+  height: 15rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  transition: all 0.16s;
+  overflow: hidden; }
+  .project-link:not(:last-child) {
+    margin-bottom: 2rem; }
+  .project-link:link, .project-link:active, .project-link:visited {
+    text-decoration: none; }
+  .project-link__description {
+    position: absolute;
+    bottom: 0;
+    color: #f3f3f3;
+    background: #333;
+    width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: .5rem 1rem;
+    transition: transform 0.16s;
+    transform: translateY(100%); }
+  .project-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 2rem rgba(17, 17, 17, 0.7); }
+  .project-link:hover .project-link__description {
+    transform: translateY(0); }
+  .project-link.hidden {
+    opacity: 0;
+    transform: scale(0.4); }
+  .project-link.animating {
+    transition: all 1s; }
+
+#link-sukkashop {
+  background-image: url(../img/sukkashop.jpg); }
+
+#link-salon {
+  background-image: url(../img/salon.jpg); }
+
 .section {
   position: absolute;
   width: 40vw;
@@ -179,109 +221,117 @@ body {
 
 #section-teemu .section__primary-button {
   position: relative;
-  top: -12.5vh;
-  left: -12.5vh; }
+  top: -10rem;
+  left: -10rem; }
 
 #section-projects {
+  width: 51rem;
+  height: 32rem;
   top: 50%;
   right: 50%; }
   #section-projects .section__primary-button {
     position: absolute;
-    top: calc(25vh * 0.6 - 3rem);
-    right: calc(25vh * 0.6 - 3rem); }
+    top: calc(20rem * 0.6 - 4rem);
+    right: calc(20rem * 0.6 - 4rem); }
     #section-projects .section__primary-button.hidden {
-      transform: translate(calc(25vh * 0.6 - 3rem), calc(-25vh * 0.6 + 3rem)); }
+      transform: translate(calc(20rem * 0.6 - 4rem), calc(-20rem * 0.6 + 4rem)); }
 
 #section-resume {
+  width: 26rem;
+  height: 26rem;
   bottom: 50%;
   right: 50%; }
   #section-resume .section__primary-button {
     position: absolute;
-    bottom: calc(25vh * 0.6 - 3rem);
-    right: calc(25vh * 0.6 - 3rem);
+    bottom: calc(20rem * 0.6 - 4rem);
+    right: calc(20rem * 0.6 - 4rem);
     background: #fa8231; }
     #section-resume .section__primary-button.hidden {
-      transform: translate(calc(25vh * 0.6 - 3rem), calc(25vh * 0.6 - 3rem)); }
+      transform: translate(calc(20rem * 0.6 - 4rem), calc(20rem * 0.6 - 4rem)); }
 
 #section-techs {
-  bottom: 50%;
-  left: calc(50% - calc(25vh * 0.6 - 3rem)); }
+  width: 55rem;
+  height: 41rem;
+  bottom: calc(50% - 2rem);
+  left: calc(50% - calc(20rem * 0.6 - 4rem)); }
   #section-techs .section__primary-button {
     position: absolute;
-    bottom: calc(25vh * 0.6 - 3rem);
-    left: calc(2 * calc(25vh * 0.6 - 3rem)); }
+    bottom: calc(calc(20rem * 0.6 - 4rem) + 2rem);
+    left: calc(2 * calc(20rem * 0.6 - 4rem)); }
     #section-techs .section__primary-button.hidden {
-      transform: translate(calc(-25vh * 0.6 + 3rem), calc(25vh * 0.6 - 3rem)); }
+      transform: translate(calc(-20rem * 0.6 + 4rem), calc(20rem * 0.6 - 4rem)); }
 
 #section-contacts {
+  width: 54rem;
+  height: 33rem;
   top: 50%;
   left: 50%; }
   #section-contacts .section__primary-button {
     position: absolute;
-    top: calc(25vh * 0.6 - 3rem);
-    left: calc(25vh * 0.6 - 3rem);
+    top: calc(20rem * 0.6 - 4rem);
+    left: calc(20rem * 0.6 - 4rem);
     background: #F02F46; }
     #section-contacts .section__primary-button.hidden {
-      transform: translate(calc(-25vh * 0.6 + 3rem), calc(-25vh * 0.6 + 3rem)); }
+      transform: translate(calc(-20rem * 0.6 + 4rem), calc(-20rem * 0.6 + 4rem)); }
 
 .header {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 25vh;
-  width: 25vh;
+  height: 20rem;
+  width: 20rem;
   z-index: 1000; }
 
 #tech-blob-html5 {
-  bottom: 13rem;
-  left: 9rem; }
+  bottom: 15rem;
+  left: 8rem; }
 
 #tech-blob-css3 {
-  bottom: 23rem;
+  bottom: 25rem;
   left: 6rem; }
 
 #tech-blob-javascript {
-  bottom: 24rem;
+  bottom: 26rem;
   left: 17rem; }
 
 #tech-blob-sass {
-  bottom: 30rem;
+  bottom: 32rem;
   left: 27rem; }
 
 #tech-blob-wordpress {
-  bottom: 29rem;
+  bottom: 31rem;
   left: 40rem; }
 
 #tech-blob-react {
-  bottom: 20rem;
+  bottom: 22rem;
   left: 32rem; }
 
 #tech-blob-php {
-  bottom: 16rem;
+  bottom: 18rem;
   left: 43rem; }
 
 #tech-blob-sql {
-  bottom: 4rem;
+  bottom: 6rem;
   left: 46rem; }
 
 #tech-blob-git {
-  bottom: -2rem;
+  bottom: 0rem;
   left: 35rem; }
 
 #tech-blob-npm {
-  bottom: 9rem;
+  bottom: 11rem;
   left: 34rem; }
 
 #tech-blob-linux {
-  bottom: 0rem;
+  bottom: 2rem;
   left: 24rem; }
 
 #contact-list {
   position: absolute;
-  top: calc(calc(25vh * 0.6 - 3rem) + 10vh * (1 - 0.8));
-  left: calc(calc(25vh * 0.6 - 3rem) + 10vh * 2 + 3rem);
-  height: 16vh;
+  top: calc(calc(20rem * 0.6 - 4rem) + 8rem * (1 - 0.8));
+  left: calc(calc(20rem * 0.6 - 4rem) + 8rem * 2 + 3rem);
+  height: 12.8rem;
   display: flex;
   flex-direction: column;
   align-content: center; }
