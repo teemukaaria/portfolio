@@ -15,7 +15,7 @@
     text-decoration: none;
   }
   &:link:hover {
-    box-shadow: 0 0 1rem $bs-color;
+    box-shadow: $bs-small;
     transform: scale(1.05);
   }
 

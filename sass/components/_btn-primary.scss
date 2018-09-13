@@ -7,12 +7,13 @@
   border-radius: 100%;
   padding: 1rem;
   transition: all $mouse-transition-duration;
-  box-shadow: 0rem 0rem 3rem $bs-color;
+  box-shadow: $bs-large;
   cursor: pointer;
 
   &--small {
     width: $section-header-radius * 2;
     height: $section-header-radius * 2;
+    box-shadow: $bs-medium;
   }
 
   &__img {
@@ -66,7 +67,7 @@
   }
   &.blurred:hover {
     transform: scale($header-scale-down + .03);
-    box-shadow: 0 0 1rem $bs-color;
+    box-shadow: $bs-medium;
   }
   &--small.blurred:hover {
     transform: scale($section-header-scale-down + .03);

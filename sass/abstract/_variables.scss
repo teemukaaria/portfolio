@@ -23,8 +23,11 @@ $primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 4r
 // BOX SHADOW
 
 $bs-color: rgba($color-black, .7);
+$bs-large: 0rem 1.5rem 3rem $bs-color;
+$bs-medium: 0 1rem 2rem $bs-color;
+$bs-small: 0 .5rem 1rem $bs-color;
 
 // TRANSITIONS
 
-$mouse-transition-duration: .16s;
+$mouse-transition-duration: .2s;
 $animating-transition-duration: 1s;
