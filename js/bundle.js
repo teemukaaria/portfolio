@@ -76,7 +76,6 @@ function peekSection(section) {
     open(sectionElem);
     openPrimaryButtons(sectionElem);
     hideSecondaryItems(sectionElem);
-    sectionElem.firstElementChild.href = sectionElem.getAttribute('primaryHref');
 }
 
 function hideSection(section) {
@@ -90,7 +89,6 @@ function openSection(section) {
     const sectionElem = getSectionElement(section);
     blurPrimaryButtons(sectionElem);
     openSecondaryItems(sectionElem);
-    sectionElem.firstElementChild.href = sectionElem.getAttribute('secondaryHref');
 }
 
 function hideSections() {
@@ -124,38 +122,31 @@ function openHeader() {
     section.firstElementChild.href = "#teemu";
     startPulse();
 }
+const openSections = {
+    teemu: false,
+    techs: false,
+    contacts: false,
+    projects: false
+}
 
-function checkState() {
-    switch (window.location.hash) {
-        case '#teemu':
-            blurHeader();
-            peekSections();
-            break;
-        case '#techs':
-            blurHeader();
-            peekSections();
-            openSection('section-techs');
-            break;
-        case '#contacts':
-            blurHeader();
-            peekSections();
-            openSection('section-contacts');
-            break;
-        case '#projects':
-            blurHeader();
-            peekSections();
-            openSection('section-projects');
-            break;
-        default:
-            openHeader();
-            hideSections();
-            break;
+function drawOpenSections() {
+    if (!openSections.teemu) {
+        openHeader();
+        hideSections();
+    } else {
+        blurHeader();
+        if (openSections.techs) openSection('section-techs');
+        if (openSections.contacts) openSection('section-contacts');
+        if (openSections.projects) openSection('section-projects');
     }
 }
-window.addEventListener("hashchange", () => {
-    checkState();
-});
+
+function toggleSection(name) {
+    if (openSections[name] !== undefined) {
+        openSections[name] = !openSections[name];
+    }
+    drawOpenSections();
+}
 window.addEventListener("load", () => {
     openHeader();
-    checkState();
 })

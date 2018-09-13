@@ -42,7 +42,8 @@ body {
   border-radius: 100%;
   padding: 1rem;
   transition: all 0.16s;
-  box-shadow: 0rem 0rem 3rem rgba(17, 17, 17, 0.7); }
+  box-shadow: 0rem 0rem 3rem rgba(17, 17, 17, 0.7);
+  cursor: pointer; }
   .btn-primary--small {
     width: 16rem;
     height: 16rem; }

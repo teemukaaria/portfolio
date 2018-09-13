@@ -24,8 +24,8 @@
     </defs>
   </svg>
 
-  <header class="header" id="section-teemu" primaryHref="#teemu" secondaryHref="#" >
-    <a href="#teemu" class="btn-primary hidden section__primary-button">
+  <header class="header" id="section-teemu">
+    <div onclick="toggleSection('teemu')" class="btn-primary hidden section__primary-button">
       <img src="img/face.jpg" alt="Teemu Kääriä" class="btn-primary__img">
       <svg version="1.1" class="btn-primary__text" viewBox="-3 -3 104 104">
         <text class="btn-primary__text--upper">
@@ -39,12 +39,12 @@
             </textPath>
           </text>
       </svg>
-    </a>
+    </div>
   </header>
 
   <main>
     
-    <section class="section" id="section-resume" primaryHref="files/CV_Teemu_Feb_2018_EN.pdf" secondaryHref="files/CV_Teemu_Feb_2018_EN.pdf">
+    <section class="section" id="section-resume">
       <a href="files/CV_Teemu_Feb_2018_EN.pdf" target="_blank" class="btn-primary btn-primary--small hidden section__primary-button">
         <svg class="btn-primary__icon">
           <use xlink:href="img/sprite.svg#icon-card_membership" />
@@ -59,8 +59,8 @@
       </a>
     </section>
     
-    <section class="section" id="section-techs" primaryHref="#techs" secondaryHref="#teemu" >
-      <a href="#techs" class="btn-primary btn-primary--small hidden section__primary-button">
+    <section class="section" id="section-techs">
+      <div onclick="toggleSection('techs')" class="btn-primary btn-primary--small hidden section__primary-button">
         <svg class="btn-primary__icon">
           <use xlink:href="img/sprite.svg#icon-laptop_mac" />
         </svg>
@@ -71,7 +71,7 @@
               </textPath>
             </text>
         </svg>
-      </a>
+      </div>
 
       <div class="info-blob hidden section__secondary-item" id="tech-blob-html5">
         <svg class="info-blob__icon">
@@ -141,8 +141,8 @@
       </div>
     </section>
 
-    <section class="section" id="section-projects" primaryHref="#projects" secondaryHref="#teemu" >
-      <a href="#projects" class="btn-primary btn-primary--small hidden section__primary-button">
+    <section class="section" id="section-projects">
+      <div onclick="toggleSection('projects')" class="btn-primary btn-primary--small hidden section__primary-button">
         <svg class="btn-primary__icon">
           <use xlink:href="img/sprite.svg#icon-folder" />
         </svg>
@@ -153,7 +153,7 @@
               </textPath>
             </text>
         </svg>
-      </a>
+      </div>
 
       <a href="http://195.211.18.181/sukkashop" target="_blank" class="project-link section__secondary-item hidden" id="link-sukkashop">
         <p class="project-link__description">A project of my own</p>
@@ -163,8 +163,8 @@
       </a>
     </section>
     
-    <section class="section" id="section-contacts" primaryHref="#contacts" secondaryHref="#teemu">
-      <a href="#contacts" class="btn-primary btn-primary--small hidden section__primary-button">
+    <section class="section" id="section-contacts">
+      <div onclick="toggleSection('contacts')" class="btn-primary btn-primary--small hidden section__primary-button">
         <svg class="btn-primary__icon">
           <use xlink:href="img/sprite.svg#icon-account_box" />
         </svg>
@@ -175,7 +175,7 @@
               </textPath>
             </text>
         </svg>
-      </a>
+      </div>
 
       <ul class="contact-list section__secondary-item hidden" id="contact-list">
         <li class="contact-list__item">
