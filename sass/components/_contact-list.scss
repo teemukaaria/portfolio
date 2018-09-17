@@ -7,6 +7,10 @@
 
     &:not(:last-child) {
       margin-bottom: 1rem;
+      
+      @media only screen and (max-width: $bp-smaller) {
+        margin-bottom: 0rem;
+      }
     }
   }
 
@@ -15,11 +19,24 @@
     width: 3rem;
     margin-right: 2rem;
     fill: $color-black;
+
+    @media only screen and (max-width: $bp-smaller) {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
   }
 
   &__text {
     font-size: 1.6rem;
     color: $color-black;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.3rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      font-size: 1.1rem;
+    }
   }
 
   &.hidden {

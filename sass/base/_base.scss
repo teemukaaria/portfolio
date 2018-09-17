@@ -7,11 +7,42 @@
 }
 
 html {
-  font-size: 62.5%; // 1rem = 10px
+  --rem-resize: 62.5%;
+
+  font-size: var(--rem-resize); // 1rem = 10px
+
+  @media only screen and (max-width: $bp-larger) {
+    font-size: 51%;
+  }
+  @media only screen and (max-width: $bp-large) {
+    font-size: 41%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    font-size: 37.5%;
+  }
 }
 
 body {
   box-sizing: border-box;
   background: $color-white;
   font-family: 'Ubuntu', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  min-height: 72rem;
+  min-width: 109rem;
+  position: relative;
+  margin: auto;
+
+  @media only screen and (max-width: $bp-medium) {
+    min-height: 92rem;
+    min-width: 65rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    min-height: 71rem;
+    min-width: 49rem;
+  }
+  @media only screen and (max-width: $bp-smaller) {
+    min-height: 49rem;
+    min-width: 34rem;
+  }
 }

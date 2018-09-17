@@ -7,12 +7,32 @@
   flex-direction: column;
   align-content: center;
 
+  @media only screen and (max-width: $bp-medium) {
+    top: calc(#{$primary-button-offset} + #{$section-header-radius} * 2 - 9.5rem);
+    left: calc(#{$primary-button-offset});
+  }
+  @media only screen and (max-width: $bp-small) {
+    top: calc(#{$primary-button-offset} + #{$section-header-radius} * 2 - 15.5rem);
+    left: calc(#{$primary-button-offset} - 5rem);
+  }
+  @media only screen and (max-width: $bp-smaller) {
+    top: calc(#{$primary-button-offset} + #{$section-header-radius} * 2 - 16.5rem);
+    left: calc(#{$primary-button-offset} - 6rem);
+    height: $section-header-radius * 1.5 * $section-header-scale-down;
+  }
+
   & > li {
     flex-grow: 1;
   }
 
   li:nth-child(2n - 1) {
     transform: translateX(-1rem);
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    li:nth-child(2n) {
+      transform: translateX(-2rem);
+    }
   }
 }
 
@@ -21,11 +41,35 @@
     top: 24rem;
     left: 7rem;
     background: #333;
+    
+    @media only screen and (max-width: $bp-medium) {
+      top: calc(24rem + 6rem);
+    }
+    @media only screen and (max-width: $bp-small) {
+      top: calc(24rem);
+      left: 5rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      top: calc(24rem - 5rem);
+      left: 3rem;
+    }
   }
 
   &-linkedin {
     top: 24rem;
     left: 18rem;
     background: #0077b5;
+    
+    @media only screen and (max-width: $bp-medium) {
+      top: calc(24rem + 6rem);
+    }
+    @media only screen and (max-width: $bp-small) {
+      top: calc(24rem);
+      left: 14rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      top: calc(24rem - 5rem);
+      left: 10rem;
+    }
   }
 }

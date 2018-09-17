@@ -4,55 +4,187 @@
   &-html5 {
     bottom: 15rem;
     left: 8rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 23rem;
+      left: 8rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 15rem;
+      left: 6rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 11.5rem;
+      left: 4rem;
+    }
   }
 
   &-css3 {
-    bottom: 25rem;
-    left: 6rem;
+    bottom: 24rem;
+    left: 1rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 29rem;
+      left: 1rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 20rem;
+      left: 1rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 16rem;
+      left: 2rem;
+    }
   }
 
   &-javascript {
     bottom: 26rem;
-    left: 17rem;
+    left: 12rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 32rem;
+      left: 10rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 22rem;
+      left: 8rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 16.5rem;
+      left: 7rem;
+    }
   }
 
   &-sass {
-    bottom: 32rem;
-    left: 27rem;
+    bottom: 28rem;
+    left: 23rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 34rem;
+      left: 19rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 23rem;
+      left: 15rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 17.5rem;
+      left: 12rem;
+    }
   }
 
   &-wordpress {
-    bottom: 31rem;
-    left: 40rem;
+    bottom: 28rem;
+    left: 41rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 34rem;
+      left: 28rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 26rem;
+      left: 21.5rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 18.5rem;
+      left: 17rem;
+    }
   }
 
   &-react {
     bottom: 22rem;
     left: 32rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 26rem;
+      left: 32rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 19.5rem;
+      left: 22rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 14rem;
+      left: 16rem;
+    }
   }
 
   &-php {
-    bottom: 18rem;
+    bottom: 17rem;
     left: 43rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 17rem;
+      left: 31rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 13rem;
+      left: 23rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 9.2rem;
+      left: 17rem;
+    }
   }
 
   &-sql {
     bottom: 6rem;
     left: 46rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 8.5rem;
+      left: 30rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 6.5rem;
+      left: 23rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 4.5rem;
+      left: 16rem;
+    }
   }
 
   &-git {
     bottom: 0rem;
     left: 35rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 0rem;
+      left: 33rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 0rem;
+      left: 25rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 0rem;
+      left: 18rem;
+    }
   }
 
   &-npm {
     bottom: 11rem;
     left: 34rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 10.5rem;
+      left: 21rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 6.5rem;
+      left: 16rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: 5rem;
+      left: 11rem;
+    }
   }
 
   &-linux {
     bottom: 2rem;
     left: 24rem;
+    @media only screen and (max-width: $bp-medium) {
+      bottom: 2rem;
+      left: 24rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      bottom: 0rem;
+      left: 18rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      bottom: .5rem;
+      left: 13rem;
+    }
   }
 }

@@ -1,8 +1,8 @@
 .btn-primary {
   transform-origin: center;
   display: block;
-  width: $header-radius * 2;
-  height: $header-radius * 2;
+  width: calc(#{$header-radius} * 2 * var(--scale));
+  height: calc(#{$header-radius} * 2 * var(--scale));
   background-image: linear-gradient(to bottom right, $color-primary-1, $color-primary-2);
   border-radius: 100%;
   padding: 1rem;
@@ -11,8 +11,8 @@
   cursor: pointer;
 
   &--small {
-    width: $section-header-radius * 2;
-    height: $section-header-radius * 2;
+    width: calc(#{$section-header-radius} * 2 * var(--scale));
+    height: calc(#{$section-header-radius} * 2 * var(--scale));
     box-shadow: $bs-medium;
   }
 
@@ -39,6 +39,10 @@
     animation: spin $animating-transition-duration;
     fill: $color-white;
     transition: transform $animating-transition-duration;
+
+    @media only screen and (max-width: $bp-large) {
+      font-size: 1.5rem;
+    }
   }
 
   // Pulsing behaviour

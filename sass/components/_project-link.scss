@@ -1,13 +1,17 @@
 .project-link {
   position: relative;
   display: block;
-  width: 23rem;
-  height: 14rem;
+  width: calc(25rem * var(--scale));
+  height: calc(15rem * var(--scale));
   background-size: cover;
   background-position: center;
   border-radius: 1rem;
   transition: all $mouse-transition-duration;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    top: calc(25rem * var(--scale));
+  }
 
   &:not(:last-child) {
     margin-bottom: 2rem;

@@ -1,6 +1,8 @@
 .header {
   @include positionAbsoluteCenter;
-  height: $header-radius;
-  width: $header-radius;
+  height: calc(#{$header-radius} * var(--scale));
+  width: calc(#{$header-radius} * var(--scale));
   z-index: 1000;
+  top: calc(50% + var(--offset-from-center-y));
+  left: calc(50% + var(--offset-from-center-x));
 }

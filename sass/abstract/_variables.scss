@@ -8,6 +8,14 @@ $color-gray-light: #ddd;
 $color-gray-dark: #333;
 $color-black: #111;
 
+// BREAKPOINTS
+
+$bp-larger: 68.75em; // 1100px
+$bp-large: 56.25em; // 900px
+$bp-medium: 43.75em; // 700px
+$bp-small: 31.25em; // 500px
+$bp-smaller: 20em; // 320px
+
 // CIRCLE SIZES
 
 $header-radius: 20rem;
@@ -15,8 +23,34 @@ $section-header-radius: 8rem;
 $info-blob-radius: 4rem;
 $header-scale-down: 0.6;
 $section-header-scale-down: 0.8;
+:root {
+  --scale: 1;
+  @media only screen and (max-width: $bp-small) {
+    --scale: .7;
+  }
+  @media only screen and (max-width: $bp-smaller) {
+    --scale: .5;
+  }
+}
 
 //PLACEMENT
+:root {
+  --primary-button-offset: calc((#{$header-radius} * #{$header-scale-down} - 3.5rem) * var(--scale));
+  --primary-button-offset-neg: calc((-#{$header-radius} * #{$header-scale-down} + 3.5rem) * var(--scale));
+  --offset-from-center-x: 0rem;
+  --offset-from-center-y: 0rem;
+  @media only screen and (max-width: $bp-medium) {
+    --offset-from-center-y: -12rem;
+    --offset-from-center-x: -2rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    --offset-from-center-y: -7rem;
+  }
+  @media only screen and (max-width: $bp-smaller) {
+    --offset-from-center-y: -6rem;
+    --offset-from-center-x: -1.3rem;
+  }
+}
 $primary-button-offset: calc(#{$header-radius} * #{$header-scale-down} - 4rem);
 $primary-button-offset-neg: calc(-#{$header-radius} * #{$header-scale-down} + 4rem);
 
