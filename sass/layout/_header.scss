@@ -5,4 +5,30 @@
   z-index: 1000;
   top: calc(50% + var(--offset-from-center-y));
   left: calc(50% + var(--offset-from-center-x));
+
+  &__description {
+    position: relative;
+    width: calc(#{$header-radius} * 2 * var(--scale));
+    left: calc(-#{$header-radius} / 2 * var(--scale));
+    top: -5rem;
+    font-size: 2rem;
+    color: $color-gray-dark;
+    text-align: center;
+    transform-origin: center;
+    transition: all $animating-transition-duration;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.6rem;
+      top: -3rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      font-size: 1.4rem;
+      top: -1rem;
+    }
+  }
+
+  &.blurred &__description {
+    opacity: 0;
+    transform: translateY(200%) scale(.7);
+  }
 }

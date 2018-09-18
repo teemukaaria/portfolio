@@ -10,6 +10,10 @@
   box-shadow: $bs-large;
   cursor: pointer;
 
+  @media only screen and (max-width: $bp-small) {
+    padding: .5rem;
+  }
+
   &--small {
     width: calc(#{$section-header-radius} * 2 * var(--scale));
     height: calc(#{$section-header-radius} * 2 * var(--scale));
@@ -42,6 +46,9 @@
 
     @media only screen and (max-width: $bp-large) {
       font-size: 1.5rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.75rem;
     }
   }
 
