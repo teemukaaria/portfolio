@@ -27,7 +27,8 @@
     }
   }
 
-  &.blurred &__description {
+  &.blurred &__description,
+  &.hidden &__description {
     opacity: 0;
     transform: translateY(200%) scale(.7);
   }

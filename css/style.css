@@ -443,7 +443,8 @@ body {
       .header__description {
         font-size: 1.4rem;
         top: -1rem; } }
-  .header.blurred .header__description {
+  .header.blurred .header__description,
+  .header.hidden .header__description {
     opacity: 0;
     transform: translateY(200%) scale(0.7); }
 

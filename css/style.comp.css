@@ -98,6 +98,9 @@ body {
   transition: all 0.2s;
   box-shadow: 0rem 1.5rem 3rem rgba(17, 17, 17, 0.7);
   cursor: pointer; }
+  @media only screen and (max-width: 31.25em) {
+    .btn-primary {
+      padding: .5rem; } }
   .btn-primary--small {
     width: calc(8rem * 2 * var(--scale));
     height: calc(8rem * 2 * var(--scale));
@@ -130,6 +133,9 @@ body {
     @media only screen and (max-width: 56.25em) {
       .btn-primary__text {
         font-size: 1.5rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .btn-primary__text {
+        font-size: 1.75rem; } }
   .btn-primary.pulsing {
     animation: pulse .64s; }
   .btn-primary.blurred {
@@ -419,6 +425,27 @@ body {
   z-index: 1000;
   top: calc(50% + var(--offset-from-center-y));
   left: calc(50% + var(--offset-from-center-x)); }
+  .header__description {
+    position: relative;
+    width: calc(20rem * 2 * var(--scale));
+    left: calc(-20rem / 2 * var(--scale));
+    top: -5rem;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    transform-origin: center;
+    transition: all 1s; }
+    @media only screen and (max-width: 31.25em) {
+      .header__description {
+        font-size: 1.6rem;
+        top: -3rem; } }
+    @media only screen and (max-width: 20em) {
+      .header__description {
+        font-size: 1.4rem;
+        top: -1rem; } }
+  .header.blurred .header__description {
+    opacity: 0;
+    transform: translateY(200%) scale(0.7); }
 
 #tech-blob-html5 {
   bottom: 15rem;
